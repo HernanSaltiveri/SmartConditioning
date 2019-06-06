@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D6F14ECE-3D7E-4FCC-9B5B-3775699518BE}"
 	ProjectSection(SolutionItems) = preProject
 		README.MD = README.MD
+		testApi.ps1 = testApi.ps1
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeviceSimulator", "DeviceSimulator\DeviceSimulator.csproj", "{D7675157-6483-4AF0-B182-57CD2BC7864B}"

@@ -7,15 +7,23 @@ using Admin.ViewModels;
 using Admin.Data.Repositories;
 using Admin.Data.Interfaces;
 
+using Admin.Models;
+
 namespace Admin.Controllers
 {
     public class ApiController : Controller
     {
         // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> SendValues(string temperature, string airhumidity, string carbonmonoxide, string healthstatus)
+        [HttpGet()]
+        public ActionResult<string> SendValues(Measurement measurement)
         {
-            return "value";
+            return "sucess";
+        }
+
+        public string Index()
+        {
+            
+            return "";
         }
     }
 }

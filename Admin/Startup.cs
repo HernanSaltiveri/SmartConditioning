@@ -18,6 +18,8 @@ using Admin.Data.Interfaces;
 using Admin.Data.Repositories;
 using Admin.Data.Mocks;
 
+using Swashbuckle.AspNetCore.Swagger;
+
 namespace Admin
 {
     public class Startup
@@ -39,7 +41,11 @@ namespace Admin
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
+            });
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlite(
                     Configuration.GetConnectionString("DefaultConnection")));
@@ -69,6 +75,17 @@ namespace Admin
                 app.UseHsts();
             }
 
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), 
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
+
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
@@ -83,6 +100,9 @@ namespace Admin
                 routes.MapRoute(
                     name: "Device",
                     template: "{controller=Device}/{action=Index}/{id?}");
+                routes.MapRoute(
+                  name: "Api",
+                  template: "{controller=Api}/{action=Index}/{id?}");
             });
         }
     }
