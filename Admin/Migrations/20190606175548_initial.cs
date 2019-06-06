@@ -1,5 +1,4 @@
 ﻿using System;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Admin.Migrations
@@ -52,21 +51,14 @@ namespace Admin.Migrations
                 columns: table => new
                 {
                     DeviceId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Sqlite:Autoincrement", true),
                     serialNumber = table.Column<string>(nullable: true),
                     registrationDate = table.Column<DateTime>(nullable: false),
-                    firmWareVersion = table.Column<string>(nullable: true),
-                    DeviceId1 = table.Column<int>(nullable: true)
+                    firmWareVersion = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Devices", x => x.DeviceId);
-                    table.ForeignKey(
-                        name: "FK_Devices_Devices_DeviceId1",
-                        column: x => x.DeviceId1,
-                        principalTable: "Devices",
-                        principalColumn: "DeviceId",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -74,7 +66,7 @@ namespace Admin.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Sqlite:Autoincrement", true),
                     RoleId = table.Column<string>(nullable: false),
                     ClaimType = table.Column<string>(nullable: true),
                     ClaimValue = table.Column<string>(nullable: true)
@@ -95,7 +87,7 @@ namespace Admin.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Sqlite:Autoincrement", true),
                     UserId = table.Column<string>(nullable: false),
                     ClaimType = table.Column<string>(nullable: true),
                     ClaimValue = table.Column<string>(nullable: true)
@@ -180,7 +172,7 @@ namespace Admin.Migrations
                 columns: table => new
                 {
                     MeasurementId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Sqlite:Autoincrement", true),
                     MeasumerentDateTime = table.Column<DateTime>(nullable: false),
                     Temperature = table.Column<double>(nullable: false),
                     AirHumidity = table.Column<double>(nullable: false),
@@ -208,8 +200,7 @@ namespace Admin.Migrations
                 name: "RoleNameIndex",
                 table: "AspNetRoles",
                 column: "NormalizedName",
-                unique: true,
-                filter: "[NormalizedName] IS NOT NULL");
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetUserClaims_UserId",
@@ -235,13 +226,7 @@ namespace Admin.Migrations
                 name: "UserNameIndex",
                 table: "AspNetUsers",
                 column: "NormalizedUserName",
-                unique: true,
-                filter: "[NormalizedUserName] IS NOT NULL");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Devices_DeviceId1",
-                table: "Devices",
-                column: "DeviceId1");
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Measurements_DeviceId",

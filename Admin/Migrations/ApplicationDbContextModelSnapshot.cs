@@ -3,31 +3,23 @@ using System;
 using Admin.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Admin.Migrations
 {
-    [DbContext(typeof(SmartConditioningDbContext))]
-    [Migration("20190606140323_initial")]
-    partial class initial
+    [DbContext(typeof(ApplicationDbContext))]
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.3-servicing-35854")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "2.2.3-servicing-35854");
 
             modelBuilder.Entity("Admin.Models.Device", b =>
                 {
                     b.Property<int>("DeviceId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("DeviceId1");
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("firmWareVersion");
 
@@ -37,16 +29,13 @@ namespace Admin.Migrations
 
                     b.HasKey("DeviceId");
 
-                    b.HasIndex("DeviceId1");
-
                     b.ToTable("Devices");
                 });
 
             modelBuilder.Entity("Admin.Models.Measurement", b =>
                 {
                     b.Property<int>("MeasurementId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<double>("AirHumidity");
 
@@ -85,8 +74,7 @@ namespace Admin.Migrations
 
                     b.HasIndex("NormalizedName")
                         .IsUnique()
-                        .HasName("RoleNameIndex")
-                        .HasFilter("[NormalizedName] IS NOT NULL");
+                        .HasName("RoleNameIndex");
 
                     b.ToTable("AspNetRoles");
                 });
@@ -94,8 +82,7 @@ namespace Admin.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("ClaimType");
 
@@ -156,8 +143,7 @@ namespace Admin.Migrations
 
                     b.HasIndex("NormalizedUserName")
                         .IsUnique()
-                        .HasName("UserNameIndex")
-                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+                        .HasName("UserNameIndex");
 
                     b.ToTable("AspNetUsers");
                 });
@@ -165,8 +151,7 @@ namespace Admin.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("ClaimType");
 
@@ -232,17 +217,10 @@ namespace Admin.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("Admin.Models.Device", b =>
-                {
-                    b.HasOne("Admin.Models.Device")
-                        .WithMany("Devices")
-                        .HasForeignKey("DeviceId1");
-                });
-
             modelBuilder.Entity("Admin.Models.Measurement", b =>
                 {
                     b.HasOne("Admin.Models.Device", "Device")
-                        .WithMany()
+                        .WithMany("Measurements")
                         .HasForeignKey("DeviceId");
                 });
 

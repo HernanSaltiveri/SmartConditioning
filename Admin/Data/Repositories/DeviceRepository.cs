@@ -9,8 +9,8 @@ namespace Admin.Data.Repositories
 {
     public class DeviceRepository : IDeviceRepository
     {
-        private readonly SmartConditioningDbContext _appDbContext;
-        public DeviceRepository(SmartConditioningDbContext appDbContext)
+        private readonly ApplicationDbContext _appDbContext;
+        public DeviceRepository(ApplicationDbContext appDbContext)
         {
             _appDbContext = appDbContext;
         }

@@ -12,3 +12,16 @@ C:\Theorem\API\obj\Debug\netcoreapp2.2\API.RazorTargetAssemblyInfo.cache
 C:\Theorem\API\obj\Debug\netcoreapp2.2\API.dll
 C:\Theorem\API\obj\Debug\netcoreapp2.2\API.pdb
 C:\Theorem\API\obj\Debug\netcoreapp2.2\API.csprojAssemblyReference.cache
+C:\Theorem\SmartConditioning\API\bin\Debug\netcoreapp2.2\API.deps.json
+C:\Theorem\SmartConditioning\API\bin\Debug\netcoreapp2.2\API.runtimeconfig.json
+C:\Theorem\SmartConditioning\API\bin\Debug\netcoreapp2.2\API.runtimeconfig.dev.json
+C:\Theorem\SmartConditioning\API\bin\Debug\netcoreapp2.2\API.dll
+C:\Theorem\SmartConditioning\API\bin\Debug\netcoreapp2.2\API.pdb
+C:\Theorem\SmartConditioning\API\obj\Debug\netcoreapp2.2\API.csproj.CoreCompileInputs.cache
+C:\Theorem\SmartConditioning\API\obj\Debug\netcoreapp2.2\API.RazorAssemblyInfo.cache
+C:\Theorem\SmartConditioning\API\obj\Debug\netcoreapp2.2\API.RazorAssemblyInfo.cs
+C:\Theorem\SmartConditioning\API\obj\Debug\netcoreapp2.2\API.AssemblyInfoInputs.cache
+C:\Theorem\SmartConditioning\API\obj\Debug\netcoreapp2.2\API.AssemblyInfo.cs
+C:\Theorem\SmartConditioning\API\obj\Debug\netcoreapp2.2\API.RazorTargetAssemblyInfo.cache
+C:\Theorem\SmartConditioning\API\obj\Debug\netcoreapp2.2\API.dll
+C:\Theorem\SmartConditioning\API\obj\Debug\netcoreapp2.2\API.pdb

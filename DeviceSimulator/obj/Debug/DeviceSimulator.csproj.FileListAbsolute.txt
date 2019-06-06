@@ -1,0 +1,7 @@
+C:\Theorem\SmartConditioning\DeviceSimulator\bin\Debug\DeviceSimulator.exe.config
+C:\Theorem\SmartConditioning\DeviceSimulator\bin\Debug\DeviceSimulator.exe
+C:\Theorem\SmartConditioning\DeviceSimulator\bin\Debug\DeviceSimulator.pdb
+C:\Theorem\SmartConditioning\DeviceSimulator\obj\Debug\DeviceSimulator.csproj.CoreCompileInputs.cache
+C:\Theorem\SmartConditioning\DeviceSimulator\obj\Debug\DeviceSimulator.exe
+C:\Theorem\SmartConditioning\DeviceSimulator\obj\Debug\DeviceSimulator.pdb
+C:\Theorem\SmartConditioning\DeviceSimulator\obj\Debug\DeviceSimulator.csprojAssemblyReference.cache
