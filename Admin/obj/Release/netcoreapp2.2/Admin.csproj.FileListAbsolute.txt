@@ -32,3 +32,4 @@ C:\Theorem\SmartConditioning\Admin\obj\Release\netcoreapp2.2\Admin.Views.pdb
 C:\Theorem\SmartConditioning\Admin\obj\Release\netcoreapp2.2\Admin.dll
 C:\Theorem\SmartConditioning\Admin\obj\Release\netcoreapp2.2\Admin.pdb
 C:\Theorem\SmartConditioning\Admin\obj\Release\netcoreapp2.2\Admin.csproj.CopyComplete
+C:\Theorem\SmartConditioning\Admin\obj\Release\netcoreapp2.2\Razor\Views\Measurement\Index.g.cshtml.cs
