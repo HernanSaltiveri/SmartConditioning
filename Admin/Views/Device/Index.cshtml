@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Devices";
+}
+
+@model DeviceListViewModel
+
+<h3 class="display-4">Devices</h3>
+@*<div class="text-center">
+    <h1 class="display-4">Devices</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>*@
+
+
+<div class="row marginTop">
+
+    @foreach (var device in Model.Devices)
+    {
+    <ul>
+        <li>
+            @device.DeviceId.ToString();
+        </li>
+        <li>
+            @device.firmWareVersion.ToString();
+        </li>
+    </ul>
+    }
+
+</div>
