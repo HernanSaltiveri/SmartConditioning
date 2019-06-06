@@ -11,15 +11,11 @@ namespace Admin.Controllers
 {
     public class DeviceController : Controller
     {
-
         private readonly IDeviceRepository _deviceRepository;
-
         public DeviceController(IDeviceRepository deviceRepository)
         {
             _deviceRepository = deviceRepository;
         }
-
-
         public IActionResult Index()
         {
             var vm = new DeviceListViewModel()

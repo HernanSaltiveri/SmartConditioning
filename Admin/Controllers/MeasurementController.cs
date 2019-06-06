@@ -11,15 +11,11 @@ namespace Admin.Controllers
 {
     public class MesuarementController : Controller
     {
-
         private readonly IMeasurementRepository _measurementRepository;
-
         public MesuarementController(IMeasurementRepository measurementRepository)
         {
             _measurementRepository = measurementRepository;
         }
-
-
         public IActionResult Index()
         {
             var vm = new MeasurementListViewModel()
