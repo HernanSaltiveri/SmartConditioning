@@ -66,3 +66,4 @@ C:\Theorem\SmartConditioning\Admin\obj\Debug\netcoreapp2.2\Admin.pdb
 C:\Theorem\SmartConditioning\Admin\obj\Debug\netcoreapp2.2\Admin.csproj.CopyComplete
 C:\Theorem\SmartConditioning\Admin\bin\Debug\netcoreapp2.2\app.db
 C:\Theorem\SmartConditioning\Admin\obj\Debug\netcoreapp2.2\Razor\Views\Measurement\Index.g.cshtml.cs
+C:\Theorem\SmartConditioning\Admin\obj\Debug\netcoreapp2.2\Admin.csprojAssemblyReference.cache
