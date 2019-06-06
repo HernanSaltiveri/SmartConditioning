@@ -55,8 +55,9 @@ namespace Admin
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             //services.AddTransient<IDeviceRepository, DeviceMockRepository>();
-            services.AddTransient<IDeviceRepository, DeviceRepository>();
             services.AddTransient<IMeasurementRepository, MeasurementRepository>();
+            services.AddTransient<IDeviceRepository, DeviceRepository>();
+           
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
@@ -104,12 +105,15 @@ namespace Admin
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
-                routes.MapRoute(
-                    name: "Device",
-                    template: "{controller=Device}/{action=Index}/{id?}");
+
                 routes.MapRoute(
                    name: "Measurement",
                    template: "{controller=Measurement}/{action=Index}/{id?}");
+
+                routes.MapRoute(
+                    name: "Device",
+                    template: "{controller=Device}/{action=Index}/{id?}");
+                
                 routes.MapRoute(
                   name: "Api",
                   template: "{controller=Api}/{action=Index}/{id?}");

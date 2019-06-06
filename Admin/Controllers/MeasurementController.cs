@@ -9,10 +9,10 @@ using Admin.Data.Interfaces;
 
 namespace Admin.Controllers
 {
-    public class MesuarementController : Controller
+    public class MeasurementController : Controller
     {
         private readonly IMeasurementRepository _measurementRepository;
-        public MesuarementController(IMeasurementRepository measurementRepository)
+        public MeasurementController(IMeasurementRepository measurementRepository)
         {
             _measurementRepository = measurementRepository;
         }
