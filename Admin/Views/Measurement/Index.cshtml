@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Measurement";
+}
+
+
+@model MeasurementListViewModel
+
+<h3 class="display-4">Measurements</h3>
+
+<div class="row marginTop">
+
+    @foreach (var measurement in Model.Measurements)
+    {
+        <ul>
+            <li>
+                @measurement.AirHumidity.ToString();
+            </li>
+            <li>
+                @measurement.CarbonMonoxideLevel.ToString();
+            </li>
+        </ul>
+    }
+
+</div>

@@ -12,19 +12,19 @@ namespace Admin.Controllers
     public class MesuarementController : Controller
     {
 
-        private readonly IDeviceRepository _deviceRepository;
+        private readonly IMeasurementRepository _measurementRepository;
 
-        public MesuarementController(IDeviceRepository deviceRepository)
+        public MesuarementController(IMeasurementRepository measurementRepository)
         {
-            _deviceRepository = deviceRepository;
+            _measurementRepository = measurementRepository;
         }
 
 
         public IActionResult Index()
         {
-            var vm = new DeviceListViewModel()
+            var vm = new MeasurementListViewModel()
             {
-                Devices = _deviceRepository.Devices
+                Measurements = _measurementRepository.Measurements
             }; 
             return View(vm);
         }

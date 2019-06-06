@@ -11,19 +11,18 @@ using Admin.Models;
 
 namespace Admin.Controllers
 {
-    public class ApiController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ApiController : ControllerBase
     {
         // GET api/values/5
-        [HttpGet()]
+        [HttpGet]
+        [ApiExplorerSettings(IgnoreApi = true)]
         public ActionResult<string> SendValues(Measurement measurement)
         {
             return "sucess";
         }
 
-        public string Index()
-        {
-            
-            return "";
-        }
+       
     }
 }

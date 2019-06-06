@@ -56,8 +56,13 @@ namespace Admin
 
             //services.AddTransient<IDeviceRepository, DeviceMockRepository>();
             services.AddTransient<IDeviceRepository, DeviceRepository>();
+            services.AddTransient<IMeasurementRepository, MeasurementRepository>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -67,6 +72,8 @@ namespace Admin
             {
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
+
+
             }
             else
             {
@@ -100,6 +107,9 @@ namespace Admin
                 routes.MapRoute(
                     name: "Device",
                     template: "{controller=Device}/{action=Index}/{id?}");
+                routes.MapRoute(
+                   name: "Measurement",
+                   template: "{controller=Measurement}/{action=Index}/{id?}");
                 routes.MapRoute(
                   name: "Api",
                   template: "{controller=Api}/{action=Index}/{id?}");
