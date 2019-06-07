@@ -35,3 +35,4 @@ C:\Theorem\SmartConditioning\Admin\obj\Release\netcoreapp2.2\Razor\Views\Sensor\
 C:\Theorem\SmartConditioning\Admin\obj\Release\netcoreapp2.2\Razor\Views\Device\Search.g.cshtml.cs
 C:\Theorem\SmartConditioning\Admin\obj\Release\netcoreapp2.2\Razor\Views\Measurement\Search.g.cshtml.cs
 C:\Theorem\SmartConditioning\Admin\obj\Release\netcoreapp2.2\Razor\Views\Sensor\Search.g.cshtml.cs
+C:\Theorem\SmartConditioning\Admin\bin\Release\netcoreapp2.2\app.db

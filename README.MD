@@ -97,4 +97,6 @@ Other Functionality
 - Create a separate WebApi project
 
 
+#### iv. DB Schema
 
+![Db Schema](Admin/wwwroot/img/DbSchema.PNG)
