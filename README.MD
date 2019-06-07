@@ -1,6 +1,7 @@
 # Smart Conditioning
 ![Conditioning Device](Admin/wwwroot/img/conditioningDevice.jpg)
 
+
 #### i. Summary
 Create a BackEnd and a Web Api for a Smart Device Air Aconditioning
 
@@ -12,7 +13,11 @@ device and luckily for us, it has full HTTP client functionality.
 They want us to do a proof of concept of a backend system which integrates with all of their air
 conditioning units and provides them with an admin panel to manage their system.
 We need to build an HTTP API for the AC units to connect to and a simple web app to serve as
-an admin panel for this AC company.##### Devices APIThe devices API should support:
+an admin panel for this AC company.
+
+##### Devices API
+
+The devices API should support:
 
 1. Registering a new device: [#1](https://github.com/HernanSaltiveri/SmartConditioning/issues/1)
 -  Each device will have a serial number, a registration date, and a firmware
