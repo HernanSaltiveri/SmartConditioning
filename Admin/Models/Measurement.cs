@@ -15,6 +15,6 @@ namespace Admin.Models
         public int CarbonMonoxideLevel { get; set; }
         public string HealthStatus { get; set; }
 
-        public virtual Device Device { get; set; }
+        public virtual Sensor Sensor { get; set; }
     }
 }

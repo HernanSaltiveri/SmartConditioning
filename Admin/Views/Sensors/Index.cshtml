@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Devices";
+}
+
+@model SensorListViewModel
+
+<h3 class="display-4">Sensors</h3>
+@*<text></text>*@
+<input type="text"/> <input type="button" value="Search" ></button>
+<br>
+
+
+    <div class="row marginTop">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Device Serial Number</th>
+                    <th>Sensor Serial Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var sensor in Model.Sensors)
+                {
+                <tr>
+                    <td>
+                        &nbsp;
+                        @*placeholder for devise serial number*@
+                    </td>
+                    <td>
+                        @sensor.sensorSerialNumber.ToString()
+                    </td>
+                   
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>

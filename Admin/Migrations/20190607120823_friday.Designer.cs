@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Admin.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190606175548_initial")]
-    partial class initial
+    [Migration("20190607120823_friday")]
+    partial class friday
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -43,19 +43,35 @@ namespace Admin.Migrations
 
                     b.Property<int>("CarbonMonoxideLevel");
 
-                    b.Property<int?>("DeviceId");
-
                     b.Property<string>("HealthStatus");
 
                     b.Property<DateTime>("MeasumerentDateTime");
+
+                    b.Property<int?>("SensorId");
 
                     b.Property<double>("Temperature");
 
                     b.HasKey("MeasurementId");
 
-                    b.HasIndex("DeviceId");
+                    b.HasIndex("SensorId");
 
                     b.ToTable("Measurements");
+                });
+
+            modelBuilder.Entity("Admin.Models.Sensor", b =>
+                {
+                    b.Property<int>("SensorId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int?>("DeviceId");
+
+                    b.Property<string>("sensorSerialNumber");
+
+                    b.HasKey("SensorId");
+
+                    b.HasIndex("DeviceId");
+
+                    b.ToTable("Sensor");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -221,8 +237,15 @@ namespace Admin.Migrations
 
             modelBuilder.Entity("Admin.Models.Measurement", b =>
                 {
-                    b.HasOne("Admin.Models.Device", "Device")
+                    b.HasOne("Admin.Models.Sensor", "Sensor")
                         .WithMany("Measurements")
+                        .HasForeignKey("SensorId");
+                });
+
+            modelBuilder.Entity("Admin.Models.Sensor", b =>
+                {
+                    b.HasOne("Admin.Models.Device", "Device")
+                        .WithMany("Sensors")
                         .HasForeignKey("DeviceId");
                 });
 

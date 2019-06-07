@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Admin.Migrations
 {
-    public partial class initial : Migration
+    public partial class friday : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -168,6 +168,26 @@ namespace Admin.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Sensor",
+                columns: table => new
+                {
+                    SensorId = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    sensorSerialNumber = table.Column<string>(nullable: true),
+                    DeviceId = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Sensor", x => x.SensorId);
+                    table.ForeignKey(
+                        name: "FK_Sensor_Devices_DeviceId",
+                        column: x => x.DeviceId,
+                        principalTable: "Devices",
+                        principalColumn: "DeviceId",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Measurements",
                 columns: table => new
                 {
@@ -178,16 +198,16 @@ namespace Admin.Migrations
                     AirHumidity = table.Column<double>(nullable: false),
                     CarbonMonoxideLevel = table.Column<int>(nullable: false),
                     HealthStatus = table.Column<string>(nullable: true),
-                    DeviceId = table.Column<int>(nullable: true)
+                    SensorId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Measurements", x => x.MeasurementId);
                     table.ForeignKey(
-                        name: "FK_Measurements_Devices_DeviceId",
-                        column: x => x.DeviceId,
-                        principalTable: "Devices",
-                        principalColumn: "DeviceId",
+                        name: "FK_Measurements_Sensor_SensorId",
+                        column: x => x.SensorId,
+                        principalTable: "Sensor",
+                        principalColumn: "SensorId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -229,8 +249,13 @@ namespace Admin.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Measurements_DeviceId",
+                name: "IX_Measurements_SensorId",
                 table: "Measurements",
+                column: "SensorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Sensor_DeviceId",
+                table: "Sensor",
                 column: "DeviceId");
         }
 
@@ -259,6 +284,9 @@ namespace Admin.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Sensor");
 
             migrationBuilder.DropTable(
                 name: "Devices");
