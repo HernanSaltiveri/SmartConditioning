@@ -13,6 +13,8 @@
             <tr>
                 <th>Device Id</th>
                 <th>FirmWare Version</th>
+                <th>Serial Number</th>
+                <th>Registration Date</th>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +26,12 @@
                 </td>
                 <td>
                     @device.firmWareVersion.ToString()
+                </td>
+                <td>
+                    @device.serialNumber.ToString()
+                </td>
+                <td>
+                    @device.registrationDate.ToString()
                 </td>
             </tr>
         }
