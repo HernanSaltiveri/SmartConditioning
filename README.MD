@@ -1,9 +1,10 @@
 # Smart Conditioning
 
-![Cooling Gif](Admin/wwwroot/img/CoolingGif.gif)
-
 #### i. Summary
 Create a BackEnd and a Web Api for a Smart Device Air Aconditioning
+
+![Cooling Gif](Admin/wwwroot/img/CoolingGif.gif)
+
 
 #### ii. Full Spec
 
