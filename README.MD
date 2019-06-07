@@ -102,3 +102,15 @@ Other Functionality
 The Database in use is SQLite at the moment with the following structure
 
 ![Db Schema](Admin/wwwroot/img/DbSchema.PNG)
+
+
+#### iv. Api Instructions
+
+Http Get
+/api/sensorvalue/ping
+Check Api is running
+
+Http Post
+/api/sensorvalue/AddMeasurement
+Add Measurement values to the Database
+(Pending)

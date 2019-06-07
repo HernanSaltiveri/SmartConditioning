@@ -64,7 +64,7 @@ namespace Admin
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-
+            
 
 
         }
@@ -105,6 +105,8 @@ namespace Admin
             app.UseCookiePolicy();
 
             app.UseAuthentication();
+
+            
 
             app.UseMvc(routes =>
             {

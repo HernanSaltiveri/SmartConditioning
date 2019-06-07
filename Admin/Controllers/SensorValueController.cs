@@ -16,19 +16,19 @@ namespace Admin.Controllers
     [ApiController]
     public class SensorValueController : Controller
     {
-        // GET api/values/5
-        //[HttpGet]
-        ////[ApiExplorerSettings(IgnoreApi = true)]
-        //public IEnumerable<string> SendValues(Measurement measurement)
-        //{
-        //    return new string[] { "sucess" };
-        //}
 
         [HttpGet]
-        //[ApiExplorerSettings(IgnoreApi = true)]
+        [Route("Ping")]
+        //To Do Handle the Api
         public IEnumerable<string> Get()
         {
             return new string[] { "sucess" };
+        }
+
+        [HttpPost]
+        [Route("AddMeasurement")]
+        public void Post_AddMeasurements(List<Measurement> _measurements)
+        {
         }
 
 

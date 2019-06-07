@@ -15,8 +15,10 @@ namespace Admin
         public static void Main(string[] args)
         {
             CreateWebHostBuilder(args).Build().Run();
+            
 
             
+
 
 
         }
@@ -25,6 +27,5 @@ namespace Admin
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>();
 
-        
     }
 }

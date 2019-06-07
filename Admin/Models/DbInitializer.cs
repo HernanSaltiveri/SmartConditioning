@@ -27,11 +27,15 @@ namespace Admin.Models
 
             if (!context.Devices.Any())
             {
-                context.Devices.Add(new Device() { serialNumber="12345" });
-                context.Devices.Add(new Device() { serialNumber = "67890" });
+                context.Devices.Add(new Device() {
+                    serialNumber ="12345",
+                    DeviceId =1,
+                    firmWareVersion = "v1.0"                    
+                });
                 context.SaveChanges();
             }
-            
+           
+
         }
     }
 }
