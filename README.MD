@@ -75,8 +75,6 @@ The admin web app should support:
 Issues/Tasks
 - [#3 API - Allow Bulk Insert 500 values each sensor](https://github.com/HernanSaltiveri/SmartConditioning/issues/3)
 - [#4 Admin - Login Logout](https://github.com/HernanSaltiveri/SmartConditioning/issues/4)
-- [#5 Admin - Invite others to connect](https://github.com/HernanSaltiveri/SmartConditioning/issues/5)
-- [#6 Admin - List all admin accounts](https://github.com/HernanSaltiveri/SmartConditioning/issues/6)
 - [#7 Admin - List All Devices](https://github.com/HernanSaltiveri/SmartConditioning/issues/7)
 - [#8 Admin - Search Device by serial number](https://github.com/HernanSaltiveri/SmartConditioning/issues/8)
 - [#9 Admin - Details of a Device - Value each sensors](https://github.com/HernanSaltiveri/SmartConditioning/issues/9)
@@ -89,6 +87,8 @@ Other Functionality
 Issues/Tasks
 - [#1 API - Registering New Device](https://github.com/HernanSaltiveri/SmartConditioning/issues/1)
 - [#2 API - Authenticate Send Data From Sensors](https://github.com/HernanSaltiveri/SmartConditioning/issues/2)
+- [#5 Admin - Invite others to connect](https://github.com/HernanSaltiveri/SmartConditioning/issues/5)
+- [#6 Admin - List all admin accounts](https://github.com/HernanSaltiveri/SmartConditioning/issues/6)
 - [#10 Admin - Notify even to admins](https://github.com/HernanSaltiveri/SmartConditioning/issues/10)
 - [#11 Admin - Notify health status](https://github.com/HernanSaltiveri/SmartConditioning/issues/11)
 
