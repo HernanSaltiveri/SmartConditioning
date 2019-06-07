@@ -8,17 +8,26 @@
 <h3 class="display-4">Measurements</h3>
 
 <div class="row marginTop">
-
-    @foreach (var measurement in Model.Measurements)
-    {
-        <ul>
-            <li>
-                @measurement.AirHumidity.ToString();
-            </li>
-            <li>
-                @measurement.CarbonMonoxideLevel.ToString();
-            </li>
-        </ul>
-    }
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Device Id</th>
+                <th>FirmWare Version</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var measurement in Model.Measurements)
+            {
+                <tr>
+                    <td>
+                        @measurement.AirHumidity.ToString();
+                    </td>
+                    <td>
+                        @measurement.CarbonMonoxideLevel.ToString();
+                    </td>
+                </tr>
+            }
+        </tbody>
+    <table>
 
 </div>
