@@ -6,9 +6,9 @@ using Admin.Models;
 
 namespace Admin.ViewModels
 {
-    public class MeasurementListViewModel
+    public class SensorItemViewModel
     {
+        public Device Device { get; set; }
         public Sensor Sensor { get; set; }
-        public IEnumerable<Measurement> Measurements { get; set; }
     }
 }

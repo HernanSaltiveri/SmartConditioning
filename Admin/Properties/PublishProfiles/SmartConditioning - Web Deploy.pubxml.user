@@ -8,4 +8,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA5AvI/uXR3kW2aBEDBwzhSgAAAAACAAAAAAAQZgAAAAEAACAAAADxGKTuRV0SMbvkzJkR7hkbwaIh4j5t/uqyq31guH3poQAAAAAOgAAAAAIAACAAAABZf2MQyVqIIwlyIeonAs0kqXQTFQaafAIA0/nPHXKysoAAAAADbKj5pRawlNyHImeVg4tv75rPxGPBYZPR/Y5B3LyL3PqAMwYdoFp52zwddy+7W8F2UcjkfFE9tmNDKDvvDOwgmMTmUyPCc5N0+qaziWPE95mn1WOnuv3ag1tJ7osIs/M6Kocw1ZWakSvhqNxmcVrrA+5bxdXrwZ+VAOTkQ93ZJEAAAADkgDNd2fC0caPweXD9dLm8iItoxUP9q0n8JjJICOrlI87EMrRgMXdbb6qq6By0e/RVn6hxeqJgC6zRArP8YMvk</EncryptedPassword>
   </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>DataSource=app.db</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
 </Project>

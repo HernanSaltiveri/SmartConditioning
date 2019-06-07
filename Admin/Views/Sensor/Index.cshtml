@@ -23,18 +23,20 @@
         <tbody>
             @foreach (var sensor in Model.Sensors)
             {
-            <tr>
-                <td>
-                    &nbsp;
-                    @*placeholder for devise serial number*@
-                </td>
-                <td>
-                    @sensor.sensorSerialNumber.ToString()
-                </td>
-                <td>
-                    @sensor.Type.ToString()
-                </td>
-            </tr>
+                <tr>
+                    <td>
+                        &nbsp;
+                        @*placeholder for devise serial number*@
+                    </td>
+                    <td>
+                        @sensor.sensorSerialNumber.ToString()
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Search", "Measurement" , new { id = sensor.SensorId  })">Measurements</a>
+
+                    </td>
+
+                </tr>
             }
         </tbody>
     </table>

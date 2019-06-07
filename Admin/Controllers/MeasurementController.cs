@@ -12,9 +12,12 @@ namespace Admin.Controllers
     public class MeasurementController : Controller
     {
         private readonly IMeasurementRepository _measurementRepository;
-        public MeasurementController(IMeasurementRepository measurementRepository)
+        private readonly ISensorRepository _sensorRepository;
+        public MeasurementController(IMeasurementRepository measurementRepository, ISensorRepository sensorRepository)
         {
             _measurementRepository = measurementRepository;
+            _sensorRepository = sensorRepository;
+                
         }
         public IActionResult Index()
         {
@@ -28,14 +31,8 @@ namespace Admin.Controllers
         {
             var vm = new MeasurementListViewModel();
 
-            if (id == null)
-            {
-                vm.Measurements = _measurementRepository.Measurements;
-            }
-            else
-            {
-                vm.Measurements = _measurementRepository.Measurements.Where(x => x.MeasurementId == id);
-            }
+            vm.Sensor = _sensorRepository.Sensors.Where(x => x.SensorId == id).FirstOrDefault();
+            vm.Measurements = _measurementRepository.Measurements.Where(x => x.Sensor == vm.Sensor);
 
             return View(vm);
         }

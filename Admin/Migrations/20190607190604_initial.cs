@@ -174,6 +174,7 @@ namespace Admin.Migrations
                     SensorId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     sensorSerialNumber = table.Column<string>(nullable: true),
+                    Type = table.Column<string>(nullable: true),
                     DeviceId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>

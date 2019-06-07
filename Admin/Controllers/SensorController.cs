@@ -12,8 +12,11 @@ namespace Admin.Controllers
     public class SensorController : Controller
     {
         private readonly ISensorRepository _sensorRepository;
-        public SensorController(ISensorRepository sensorRepository)
+        private readonly IDeviceRepository _deviceRepository;
+
+        public SensorController(ISensorRepository sensorRepository, IDeviceRepository deviceRepository)
         {
+            _deviceRepository = deviceRepository;
             _sensorRepository = sensorRepository;
         }
         public IActionResult Index(int? id)
@@ -29,15 +32,9 @@ namespace Admin.Controllers
         {
             var vm = new SensorListViewModel();
 
-            if (id == null)
-            {
-                vm.Sensors = _sensorRepository.Sensors;
-            }
-            else
-            {
-                vm.Sensors = _sensorRepository.Sensors.Where(x => x.sensorSerialNumber == id.ToString());
-            }
-
+            vm.Device = _deviceRepository.Devices.Where(x => x.DeviceId == id).FirstOrDefault();
+            vm.Sensors = _sensorRepository.Sensors.Where(x => x.Device == vm.Device);
+            
             return View(vm);
         }
     }
