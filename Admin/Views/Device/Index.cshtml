@@ -5,36 +5,39 @@
 @model DeviceListViewModel
 
 <h3 class="display-4">Devices</h3>
+@*<text></text>*@
+<input type="text"/> <input type="button" value="Search" ></button>
+<br>
 
 
-<div class="row marginTop">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Device Id</th>
-                <th>FirmWare Version</th>
-                <th>Serial Number</th>
-                <th>Registration Date</th>
-            </tr>
-        </thead>
-        <tbody>
-        @foreach (var device in Model.Devices)
-        {
-            <tr>
-                <td>
-                    @device.DeviceId.ToString()
-                </td>
-                <td>
-                    @device.firmWareVersion.ToString()
-                </td>
-                <td>
-                    @device.serialNumber.ToString()
-                </td>
-                <td>
-                    @device.registrationDate.ToString()
-                </td>
-            </tr>
-        }
-        </tbody>
-    </table>
-</div>
+    <div class="row marginTop">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Device Id</th>
+                    <th>FirmWare Version</th>
+                    <th>Serial Number</th>
+                    <th>Registration Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var device in Model.Devices)
+                {
+                    <tr>
+                        <td>
+                            @device.DeviceId.ToString()
+                        </td>
+                        <td>
+                            @device.firmWareVersion.ToString()
+                        </td>
+                        <td>
+                            @device.serialNumber.ToString()
+                        </td>
+                        <td>
+                            @device.registrationDate.ToString()
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
