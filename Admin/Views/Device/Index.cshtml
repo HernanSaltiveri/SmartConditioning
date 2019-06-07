@@ -8,17 +8,25 @@
 
 
 <div class="row marginTop">
-
-    @foreach (var device in Model.Devices)
-    {
-    <ul>
-        <li>
-            @device.DeviceId.ToString();
-        </li>
-        <li>
-            @device.firmWareVersion.ToString();
-        </li>
-    </ul>
-    }
-
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Device Id</th>
+                <th>FirmWare Version</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var device in Model.Devices)
+        {
+            <tr>
+                <td>
+                    @device.DeviceId.ToString()
+                </td>
+                <td>
+                    @device.firmWareVersion.ToString()
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
 </div>
