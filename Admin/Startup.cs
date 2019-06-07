@@ -20,6 +20,8 @@ using Admin.Data.Mocks;
 
 using Swashbuckle.AspNetCore.Swagger;
 
+using Admin.Models;
+
 namespace Admin
 {
     public class Startup
@@ -119,9 +121,7 @@ namespace Admin
                     name: "Sensor",
                     template: "{controller=Sensor}/{action=Index}/{id?}");
 
-                routes.MapRoute(
-                  name: "Api",
-                  template: "{controller=Api}/{action=Index}/{id?}");
+                
             });
         }
     }
