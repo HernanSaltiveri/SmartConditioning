@@ -16,12 +16,34 @@ namespace Admin.Controllers
         {
             _deviceRepository = deviceRepository;
         }
-        public IActionResult Index()
+        public IActionResult Index(int? id)
         {
-            var vm = new DeviceListViewModel()
+            var vm = new DeviceListViewModel();
+            //{
+            //    Devices = _deviceRepository.Devices
+            //};
+
+            if (id == null){
+                vm.Devices = _deviceRepository.Devices;
+            }
+            else {
+                vm.Devices = _deviceRepository.Devices.Where(x => x.serialNumber==id.ToString());
+            }
+            return View(vm);
+        }
+        public IActionResult Search(int? id)
+        {
+            var vm = new DeviceListViewModel();
+           
+            if (id == null)
             {
-                Devices = _deviceRepository.Devices
-            }; 
+                vm.Devices = _deviceRepository.Devices;
+            }
+            else
+            {
+                vm.Devices = _deviceRepository.Devices.Where(x => x.serialNumber == id.ToString());
+            }
+
             return View(vm);
         }
     }

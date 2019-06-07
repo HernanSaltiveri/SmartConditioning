@@ -6,18 +6,21 @@
 @model MeasurementListViewModel
 
 <h3 class="display-4">Measurements</h3>
-<input type="text" /> <input type="button" value="Search"></button>
+<input type="text" />
+@Html.ActionLink("Search", "Search", new { id = 12345 }, new { @class = "btn btn-light", @style = "color:black" })
+
 <br>
 
 <div class="row marginTop">
     <table class="table">
         <thead>
             <tr>
-                <th>Serial Number</th>
+                <th>Device Serial Number</th>
+                <th>Sensor Serial Number</th>
+                <th>Measumerent DateTime</th>
                 <th>Air Humidity</th>
                 <th>Carbon Monoxide Level</th>
                 <th>Health Status</th>
-                <th>Measumerent DateTime</th>
                 <th>Temperature</th>
             </tr>
         </thead>
@@ -30,6 +33,13 @@
                     @*Placeholder for Serial Number*@
                 </td>
                 <td>
+                    &nbsp;
+                    @*Placeholder for Serial Number*@
+                </td>
+                <td>
+                    @measurement.MeasumerentDateTime.ToString()
+                </td>
+                <td>
                     @measurement.AirHumidity.ToString()
                 </td>
                 <td>
@@ -38,9 +48,7 @@
                 <td>
                     @measurement.HealthStatus.ToString()
                 </td>
-                <td>
-                    @measurement.MeasumerentDateTime.ToString()
-                </td>
+
                 <td>
                     @measurement.Temperature.ToString()
                 </td>

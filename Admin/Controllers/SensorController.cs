@@ -24,5 +24,21 @@ namespace Admin.Controllers
             }; 
             return View(vm);
         }
+
+        public IActionResult Search(int? id)
+        {
+            var vm = new SensorListViewModel();
+
+            if (id == null)
+            {
+                vm.Sensors = _sensorRepository.Sensors;
+            }
+            else
+            {
+                vm.Sensors = _sensorRepository.Sensors.Where(x => x.sensorSerialNumber == id.ToString());
+            }
+
+            return View(vm);
+        }
     }
 }

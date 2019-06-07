@@ -30,5 +30,7 @@ namespace Admin.Controllers
         {
             return new string[] { "sucess" };
         }
+
+
     }
 }

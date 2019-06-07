@@ -5,7 +5,7 @@
 @model DeviceListViewModel
 
 <h3 class="display-4">Devices</h3>
-<input type="text" /> 
+<input type="text" />
 @Html.ActionLink("Search", "Search", new { id =12345 },  new { @class = "btn btn-light", @style = "color:black" })
 <br>
 
@@ -22,22 +22,22 @@
         </thead>
         <tbody>
             @foreach (var device in Model.Devices)
-            {
-                <tr>
-                    @*<td>
-                            @device.DeviceId.ToString()
-                        </td>*@
-                    <td>
-                        @device.serialNumber.ToString()
-                    </td>
-                    <td>
-                        @device.firmWareVersion.ToString()
-                    </td>
-                    <td>
-                        @device.registrationDate.ToString()
-                    </td>
-                </tr>
-            }
+                {
+            <tr>
+                @*<td>
+                        @device.DeviceId.ToString()
+                    </td>*@
+                <td>
+                    @device.serialNumber.ToString()
+                </td>
+                <td>
+                    @device.firmWareVersion.ToString()
+                </td>
+                <td>
+                    @device.registrationDate.ToString()
+                </td>
+            </tr>
+                }
         </tbody>
     </table>
 </div>

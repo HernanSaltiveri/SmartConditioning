@@ -24,5 +24,20 @@ namespace Admin.Controllers
             }; 
             return View(vm);
         }
+        public IActionResult Search(int? id)
+        {
+            var vm = new MeasurementListViewModel();
+
+            if (id == null)
+            {
+                vm.Measurements = _measurementRepository.Measurements;
+            }
+            else
+            {
+                vm.Measurements = _measurementRepository.Measurements.Where(x => x.MeasurementId == id);
+            }
+
+            return View(vm);
+        }
     }
 }
