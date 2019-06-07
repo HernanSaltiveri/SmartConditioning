@@ -6,7 +6,7 @@
 
 <h3 class="display-4">Sensors</h3>
 <input type="text" />
-@Html.ActionLink("Search by Device", "Search", new { id = 12345 }, new { @class = "btn btn-light", @style = "color:black" })
+@Html.ActionLink("Search by Device", "Search", "Sensor", new { id = 12345 }, new { @class = "btn btn-light", @style = "color:black" })
 
 <br>
 
@@ -32,7 +32,8 @@
                     @sensor.sensorSerialNumber.ToString()
                 </td>
                 <td>
-                    @Html.ActionLink("Measurements", "Measurement", "Search", new {  id = 1 })
+                    <a>></a>
+                    
                 </td>
 
             </tr>

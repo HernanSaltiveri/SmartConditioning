@@ -5,8 +5,9 @@
 @model DeviceListViewModel
 
 <h3 class="display-4">Devices</h3>
-<input type="text" /> 
-@Html.ActionLink("Search", "Search", new { id =12345 },  new { @class = "btn btn-light", @style = "color:black" })
+<input type="text" />
+@Html.ActionLink("Search", "Search", "Device", new { id = 12345 }, new { @class = "btn btn-light", @style = "color:black" })
+
 <br>
 
 
@@ -24,23 +25,23 @@
         <tbody>
             @foreach (var device in Model.Devices)
             {
-            <tr>
-                @*<td>
-            @device.DeviceId.ToString()
-        </td>*@
-                <td>
-                    @device.serialNumber.ToString()
-                </td>
-                <td>
-                    @device.firmWareVersion.ToString()
-                </td>
-                <td>
-                    @device.registrationDate.ToString()
-                </td>
-                <td>
-                    @Html.ActionLink("Sensors", "Sensor", "Search", new { id = 1 })
-                </td>
-            </tr>
+                <tr>
+                    @*<td>
+                            @device.DeviceId.ToString()
+                        </td>*@
+                    <td>
+                        @device.serialNumber.ToString()
+                    </td>
+                    <td>
+                        @device.firmWareVersion.ToString()
+                    </td>
+                    <td>
+                        @device.registrationDate.ToString()
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Search", "Sensor" , new { id = 12345 })">Sensors</a>
+                    </td>
+                </tr>
             }
         </tbody>
     </table>

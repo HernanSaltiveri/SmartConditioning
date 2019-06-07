@@ -16,7 +16,7 @@ namespace Admin.Controllers
         {
             _sensorRepository = sensorRepository;
         }
-        public IActionResult Index()
+        public IActionResult Index(int? id)
         {
             var vm = new SensorListViewModel()
             {
