@@ -13,6 +13,7 @@
     <table class="table">
         <thead>
             <tr>
+                <th>Serial Number</th>
                 <th>Air Humidity</th>
                 <th>Carbon Monoxide Level</th>
                 <th>Health Status</th>
@@ -23,23 +24,27 @@
         <tbody>
             @foreach (var measurement in Model.Measurements)
             {
-                <tr>
-                    <td>
-                        @measurement.AirHumidity.ToString()
-                    </td>
-                    <td>
-                        @measurement.CarbonMonoxideLevel.ToString()
-                    </td>
-                    <td>
-                        @measurement.HealthStatus.ToString()
-                    </td>
-                    <td>
-                        @measurement.MeasumerentDateTime.ToString()
-                    </td>
-                    <td>
-                        @measurement.Temperature.ToString()
-                    </td>
-                </tr>
+            <tr>
+                <td>
+                    &nbsp;
+                    @*Placeholder for Serial Number*@
+                </td>
+                <td>
+                    @measurement.AirHumidity.ToString()
+                </td>
+                <td>
+                    @measurement.CarbonMonoxideLevel.ToString()
+                </td>
+                <td>
+                    @measurement.HealthStatus.ToString()
+                </td>
+                <td>
+                    @measurement.MeasumerentDateTime.ToString()
+                </td>
+                <td>
+                    @measurement.Temperature.ToString()
+                </td>
+            </tr>
             }
         </tbody>
         <table>
