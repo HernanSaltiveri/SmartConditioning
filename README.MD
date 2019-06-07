@@ -99,4 +99,6 @@ Other Functionality
 
 #### iv. DB Schema
 
+The Database in use is SQLite at the moment with the following structure
+
 ![Db Schema](Admin/wwwroot/img/DbSchema.PNG)
