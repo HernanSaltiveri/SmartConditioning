@@ -69,7 +69,7 @@ namespace Admin.Migrations
 
                     b.HasIndex("DeviceId");
 
-                    b.ToTable("Sensor");
+                    b.ToTable("Sensors");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

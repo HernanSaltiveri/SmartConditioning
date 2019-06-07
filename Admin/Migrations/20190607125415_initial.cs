@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Admin.Migrations
 {
-    public partial class friday : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -168,7 +168,7 @@ namespace Admin.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Sensor",
+                name: "Sensors",
                 columns: table => new
                 {
                     SensorId = table.Column<int>(nullable: false)
@@ -178,9 +178,9 @@ namespace Admin.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Sensor", x => x.SensorId);
+                    table.PrimaryKey("PK_Sensors", x => x.SensorId);
                     table.ForeignKey(
-                        name: "FK_Sensor_Devices_DeviceId",
+                        name: "FK_Sensors_Devices_DeviceId",
                         column: x => x.DeviceId,
                         principalTable: "Devices",
                         principalColumn: "DeviceId",
@@ -204,9 +204,9 @@ namespace Admin.Migrations
                 {
                     table.PrimaryKey("PK_Measurements", x => x.MeasurementId);
                     table.ForeignKey(
-                        name: "FK_Measurements_Sensor_SensorId",
+                        name: "FK_Measurements_Sensors_SensorId",
                         column: x => x.SensorId,
-                        principalTable: "Sensor",
+                        principalTable: "Sensors",
                         principalColumn: "SensorId",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -254,8 +254,8 @@ namespace Admin.Migrations
                 column: "SensorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Sensor_DeviceId",
-                table: "Sensor",
+                name: "IX_Sensors_DeviceId",
+                table: "Sensors",
                 column: "DeviceId");
         }
 
@@ -286,7 +286,7 @@ namespace Admin.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "Sensor");
+                name: "Sensors");
 
             migrationBuilder.DropTable(
                 name: "Devices");

@@ -57,7 +57,8 @@ namespace Admin
             //services.AddTransient<IDeviceRepository, DeviceMockRepository>();
             services.AddTransient<IMeasurementRepository, MeasurementRepository>();
             services.AddTransient<IDeviceRepository, DeviceRepository>();
-           
+            services.AddTransient<ISensorRepository, SensorRepository>();
+
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
@@ -113,7 +114,11 @@ namespace Admin
                 routes.MapRoute(
                     name: "Device",
                     template: "{controller=Device}/{action=Index}/{id?}");
-                
+
+                routes.MapRoute(
+                    name: "Sensor",
+                    template: "{controller=Sensor}/{action=Index}/{id?}");
+
                 routes.MapRoute(
                   name: "Api",
                   template: "{controller=Api}/{action=Index}/{id?}");
