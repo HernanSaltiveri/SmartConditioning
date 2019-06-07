@@ -6,7 +6,7 @@
 
 <h3 class="display-4">Sensors</h3>
 <input type="text" />
-@Html.ActionLink("Search", "Search", new { id = 12345 }, new { @class = "btn btn-light", @style = "color:black" })
+@Html.ActionLink("Search by Device", "Search", new { id = 12345 }, new { @class = "btn btn-light", @style = "color:black" })
 
 <br>
 
@@ -17,21 +17,25 @@
             <tr>
                 <th>Device Serial Number</th>
                 <th>Sensor Serial Number</th>
+                <th>&nbsp;</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var sensor in Model.Sensors)
             {
-                <tr>
-                    <td>
-                        &nbsp;
-                        @*placeholder for devise serial number*@
-                    </td>
-                    <td>
-                        @sensor.sensorSerialNumber.ToString()
-                    </td>
+            <tr>
+                <td>
+                    &nbsp;
+                    @*placeholder for devise serial number*@
+                </td>
+                <td>
+                    @sensor.sensorSerialNumber.ToString()
+                </td>
+                <td>
+                    @Html.ActionLink("Measurements", "Measurement", "Search", new {  id = 1 })
+                </td>
 
-                </tr>
+            </tr>
             }
         </tbody>
     </table>

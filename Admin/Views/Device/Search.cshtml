@@ -18,6 +18,7 @@
                 <th>Serial Number</th>
                 <th>FirmWare Version</th>
                 <th>Registration Date</th>
+                <th>&nbsp;</th>
             </tr>
         </thead>
         <tbody>
@@ -25,8 +26,8 @@
                 {
             <tr>
                 @*<td>
-                        @device.DeviceId.ToString()
-                    </td>*@
+            @device.DeviceId.ToString()
+        </td>*@
                 <td>
                     @device.serialNumber.ToString()
                 </td>
@@ -35,6 +36,10 @@
                 </td>
                 <td>
                     @device.registrationDate.ToString()
+                </td>
+
+                <td>
+                    @Html.ActionLink("Sensors", "Sensor", "Search", new {  id = "12345" })
                 </td>
             </tr>
                 }
