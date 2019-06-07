@@ -23,20 +23,20 @@
             <tbody>
                 @foreach (var device in Model.Devices)
                 {
-                    <tr>
-                        <td>
-                            @device.DeviceId.ToString()
-                        </td>
-                        <td>
-                            @device.firmWareVersion.ToString()
-                        </td>
-                        <td>
-                            @device.serialNumber.ToString()
-                        </td>
-                        <td>
-                            @device.registrationDate.ToString()
-                        </td>
-                    </tr>
+                <tr>
+                    @*<td>
+                        @device.DeviceId.ToString()
+                    </td>*@
+                    <td>
+                        @device.serialNumber.ToString()
+                    </td>
+                    <td>
+                        @device.firmWareVersion.ToString()
+                    </td>
+                    <td>
+                        @device.registrationDate.ToString()
+                    </td>
+                </tr>
                 }
             </tbody>
         </table>
