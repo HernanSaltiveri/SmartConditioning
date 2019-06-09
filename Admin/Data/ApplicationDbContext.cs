@@ -16,5 +16,10 @@ namespace Admin.Data
         public DbSet<Device> Devices { get; set; }
         public DbSet<Measurement> Measurements { get; set; }
         public DbSet<Sensor> Sensors { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseLazyLoadingProxies();
+        }
     }
 }

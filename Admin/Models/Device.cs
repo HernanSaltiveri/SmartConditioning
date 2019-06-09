@@ -13,7 +13,6 @@ namespace Admin.Models
         public DateTime registrationDate { get; set; }
         public string firmWareVersion { get; set; }
 
-        //public List<Measurement> Measurements { get; set; }
-        public List<Sensor> Sensors { get; set; }
+        public virtual List<Sensor> Sensors { get; set; }
     }
 }

@@ -11,5 +11,6 @@
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <NameOfLastUsedPublishProfile>SmartConditioning - Web Deploy1</NameOfLastUsedPublishProfile>
     <ShowAllFiles>true</ShowAllFiles>
+    <WebStackScaffolding_ViewDialogWidth>600</WebStackScaffolding_ViewDialogWidth>
   </PropertyGroup>
 </Project>

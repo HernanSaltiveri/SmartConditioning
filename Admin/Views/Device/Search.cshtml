@@ -5,9 +5,9 @@
 @model DeviceListViewModel
 
 <h3 class="display-4">Devices</h3>
-<input type="text" />
+@*<input type="text" />
 @Html.ActionLink("Search", "Search", new { id =12345 },  new { @class = "btn btn-light", @style = "color:black" })
-<br>
+<br>*@
 
 
 <div class="row marginTop">
@@ -39,7 +39,7 @@
                 </td>
 
                 <td>
-                    @Html.ActionLink("Sensors", "Sensor", "Search", new {  id = "12345" })
+                    <a href="@Url.Action("SearchByDevice", "Sensor" , new { id = device.serialNumber })">Sensors</a>
                 </td>
             </tr>
                 }

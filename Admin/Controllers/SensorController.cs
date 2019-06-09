@@ -24,15 +24,19 @@ namespace Admin.Controllers
             var vm = new SensorListViewModel()
             {
                 Sensors = _sensorRepository.Sensors
-            }; 
+            };
+            if (id != null)
+            {
+                vm.Sensors = _sensorRepository.Sensors.Where(x => x.sensorSerialNumber == id.ToString());
+            }
             return View(vm);
         }
 
-        public IActionResult Search(int? id)
+        public IActionResult SearchByDevice(int? Id)
         {
             var vm = new SensorListViewModel();
 
-            vm.Device = _deviceRepository.Devices.Where(x => x.DeviceId == id).FirstOrDefault();
+            vm.Device = _deviceRepository.Devices.Where(x => x.serialNumber == Id.ToString()).FirstOrDefault();
             vm.Sensors = _sensorRepository.Sensors.Where(x => x.Device == vm.Device);
             
             return View(vm);

@@ -27,11 +27,11 @@ namespace Admin.Controllers
             }; 
             return View(vm);
         }
-        public IActionResult Search(int? id)
+        public IActionResult SearchBySensor(int? id)
         {
             var vm = new MeasurementListViewModel();
 
-            vm.Sensor = _sensorRepository.Sensors.Where(x => x.SensorId == id).FirstOrDefault();
+            vm.Sensor = _sensorRepository.Sensors.Where(x => x.sensorSerialNumber == id.ToString()).FirstOrDefault();
             vm.Measurements = _measurementRepository.Measurements.Where(x => x.Sensor == vm.Sensor);
 
             return View(vm);

@@ -27,12 +27,13 @@
                 <td>
                     &nbsp;
                     @*placeholder for devise serial number*@
+                    <a href="@Url.Action("Search", "Device" , new { id = sensor.Device.serialNumber  })">@sensor.Device.serialNumber.ToString()</a>
                 </td>
                 <td>
                     @sensor.sensorSerialNumber.ToString()
                 </td>
                 <td>
-                    <a href="@Url.Action("Search", "Measurement" , new { id = sensor.SensorId  })">Measurements</a>
+                    <a href="@Url.Action("SearchBySensor", "Measurement" , new { id = sensor.sensorSerialNumber  })">Measurements</a>
                 </td>
 
             </tr>

@@ -31,12 +31,14 @@
                 <td>
                     &nbsp;
                     @*Placeholder for Serial Number*@
-                    @measurement.Sensor.Device.serialNumber.ToString()
+                    @*@measurement.Sensor.Device.serialNumber.ToString()*@
+                    <a href="@Url.Action("Search", "Device" , new { id = measurement.Sensor.Device.serialNumber  })">@measurement.Sensor.Device.serialNumber.ToString()</a>
                 </td>
                 <td>
                     &nbsp;
                     @*Placeholder for Serial Number*@
-                    @measurement.Sensor.sensorSerialNumber.ToString()
+                    @*@measurement.Sensor.sensorSerialNumber.ToString()*@
+                    <a href="@Url.Action("Index", "Sensor" , new { id = measurement.Sensor.sensorSerialNumber  })">@measurement.Sensor.sensorSerialNumber.ToString()</a>
                 </td>
                 <td>
                     @measurement.MeasumerentDateTime.ToString()

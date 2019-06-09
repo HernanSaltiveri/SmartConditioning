@@ -5,9 +5,11 @@
 @model DeviceListViewModel
 
 <h3 class="display-4">Devices</h3>
-<input type="text" id="searchtextbox" />
-<a href="@Url.Action("Search", "Sensor" , new { id = 1 })">Sensors</a>
-<br>
+@*<input type="text" id="searchtextbox" />
+<a href="@Url.Action("Search", "Device" , new { id = 1 })">Search</a>
+<br>*@
+
+@*<a href="@Url.Action("Create", "Device" )">Add New Device</a>*@
 
 
 <div class="row marginTop">
@@ -38,7 +40,7 @@
                         @device.registrationDate.ToString()
                     </td>
                     <td>
-                        <a href="@Url.Action("Search", "Sensor" , new { id = device.DeviceId })">Sensors</a>
+                        <a href="@Url.Action("SearchByDevice", "Sensor" , new { id = device.serialNumber })">Sensors</a>
                     </td>
                 </tr>
             }

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Admin.ViewModels;
 using Admin.Data.Repositories;
 using Admin.Data.Interfaces;
+using Admin.Models;
 
 namespace Admin.Controllers
 {
@@ -16,18 +17,18 @@ namespace Admin.Controllers
         {
             _deviceRepository = deviceRepository;
         }
-        public IActionResult Index(int? id)
+        public IActionResult Index(int? serialNumber)
         {
             var vm = new DeviceListViewModel();
             //{
             //    Devices = _deviceRepository.Devices
             //};
 
-            if (id == null){
+            if (serialNumber == null){
                 vm.Devices = _deviceRepository.Devices;
             }
             else {
-                vm.Devices = _deviceRepository.Devices.Where(x => x.serialNumber==id.ToString());
+                vm.Devices = _deviceRepository.Devices.Where(x => x.serialNumber== serialNumber.ToString());
             }
             return View(vm);
         }
@@ -45,6 +46,31 @@ namespace Admin.Controllers
             }
 
             return View(vm);
+        }
+
+
+        public IActionResult Create()
+        {
+            var vm = new Device();
+            return View(vm);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("DeviceId,serialNumber")] Device device)//([Bind("EmployeeId,FullName,EmpCode,Position,OfficeLocation")] Employee employee)
+        {
+            //if (ModelState.IsValid)
+            //{
+            //    if (employee.EmployeeId == 0)
+            //        _context.Add(employee);
+            //    else
+            //        _context.Update(employee);
+            //    await _context.SaveChangesAsync();
+            //    return RedirectToAction(nameof(Index));
+            //}
+            //return View(employee);
+            return View();
         }
     }
 }
