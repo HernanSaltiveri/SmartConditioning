@@ -33,7 +33,7 @@
                     @sensor.sensorSerialNumber.ToString()
                 </td>
                 <td>
-                    <a href="@Url.Action("SearchBySensor", "Measurement" , new { id = sensor.sensorSerialNumber  })">Measurements</a>
+                    <a href="@Url.Action("SearchBySensor", "Measurement" , new { id = sensor.sensorSerialNumber.ToString()  })">Measurements</a>
                 </td>
 
             </tr>
