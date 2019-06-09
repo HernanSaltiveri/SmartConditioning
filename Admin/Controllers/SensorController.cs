@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Admin.ViewModels;
 using Admin.Data.Repositories;
 using Admin.Data.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Admin.Controllers
 {
@@ -19,6 +20,7 @@ namespace Admin.Controllers
             _deviceRepository = deviceRepository;
             _sensorRepository = sensorRepository;
         }
+        [Authorize]
         public IActionResult Index(int? id)
         {
             var vm = new SensorListViewModel()
@@ -31,7 +33,7 @@ namespace Admin.Controllers
             }
             return View(vm);
         }
-
+        [Authorize]
         public IActionResult SearchByDevice(int? Id)
         {
             var vm = new SensorListViewModel();

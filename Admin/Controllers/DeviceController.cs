@@ -7,6 +7,7 @@ using Admin.ViewModels;
 using Admin.Data.Repositories;
 using Admin.Data.Interfaces;
 using Admin.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Admin.Controllers
 {
@@ -17,6 +18,8 @@ namespace Admin.Controllers
         {
             _deviceRepository = deviceRepository;
         }
+
+        [Authorize]
         public IActionResult Index(int? serialNumber)
         {
             var vm = new DeviceListViewModel();
@@ -32,6 +35,7 @@ namespace Admin.Controllers
             }
             return View(vm);
         }
+        [Authorize]
         public IActionResult Search(int? id)
         {
             var vm = new DeviceListViewModel();

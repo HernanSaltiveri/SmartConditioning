@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Admin.ViewModels;
 using Admin.Data.Repositories;
 using Admin.Data.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Admin.Controllers
 {
@@ -19,6 +20,7 @@ namespace Admin.Controllers
             _sensorRepository = sensorRepository;
                 
         }
+        [Authorize]
         public IActionResult Index()
         {
             var vm = new MeasurementListViewModel()
@@ -27,6 +29,7 @@ namespace Admin.Controllers
             }; 
             return View(vm);
         }
+        [Authorize]
         public IActionResult SearchBySensor(int? id)
         {
             var vm = new MeasurementListViewModel();
