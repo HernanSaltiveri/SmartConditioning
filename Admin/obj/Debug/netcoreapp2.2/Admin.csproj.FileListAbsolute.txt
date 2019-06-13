@@ -70,3 +70,5 @@ C:\Theorem\SmartConditioning\Admin\obj\Debug\netcoreapp2.2\Razor\Views\Sensor\In
 C:\Theorem\SmartConditioning\Admin\obj\Debug\netcoreapp2.2\Razor\Views\Device\Create.g.cshtml.cs
 C:\Theorem\SmartConditioning\Admin\obj\Debug\netcoreapp2.2\Razor\Views\Sensor\SearchByDevice.g.cshtml.cs
 C:\Theorem\SmartConditioning\Admin\obj\Debug\netcoreapp2.2\Razor\Views\Measurement\SearchBySensor.g.cshtml.cs
+C:\Theorem\SmartConditioning\Admin\obj\Debug\netcoreapp2.2\Admin.csprojAssemblyReference.cache
+C:\Theorem\SmartConditioning\Admin\obj\Debug\netcoreapp2.2\Razor\Views\User\Index.g.cshtml.cs

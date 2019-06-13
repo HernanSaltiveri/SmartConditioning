@@ -9,10 +9,14 @@
 @Html.ActionLink("Search by Device", "Search", "Sensor", new { id = 12345 }, new { @class = "btn btn-light", @style = "color:black" })*@
 
 <br>
-
+<script>
+    $(document).ready(function () {
+        $('#data').DataTable();
+    });
+</script>
 
 <div class="row marginTop">
-    <table class="table">
+    <table id="data" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
                 <th>Device Serial Number</th>
@@ -23,20 +27,20 @@
         <tbody>
             @foreach (var sensor in Model.Sensors)
             {
-            <tr>
-                <td>
-                    &nbsp;
-                    @*placeholder for devise serial number*@
-                    <a href="@Url.Action("Search", "Device" , new { id = sensor.Device.serialNumber  })">@sensor.Device.serialNumber.ToString()</a>
-                </td>
-                <td>
-                    @sensor.sensorSerialNumber.ToString()
-                </td>
-                <td>
-                    <a href="@Url.Action("SearchBySensor", "Measurement" , new { id = sensor.sensorSerialNumber.ToString()  })">Measurements</a>
-                </td>
+                <tr>
+                    <td>
+                        &nbsp;
+                        @*placeholder for devise serial number*@
+                        <a href="@Url.Action("Search", "Device" , new { id = sensor.Device.serialNumber  })">@sensor.Device.serialNumber.ToString()</a>
+                    </td>
+                    <td>
+                        @sensor.sensorSerialNumber.ToString()
+                    </td>
+                    <td>
+                        <a href="@Url.Action("SearchBySensor", "Measurement" , new { id = sensor.sensorSerialNumber.ToString()  })">Measurements</a>
+                    </td>
 
-            </tr>
+                </tr>
             }
         </tbody>
     </table>

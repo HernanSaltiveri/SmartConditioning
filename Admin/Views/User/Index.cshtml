@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Users";
+}
+
+@model UserListViewModel
+
+<h3 class="display-4">Users</h3>
+
+
+<br>
+
+
+<div class="row marginTop">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>EMail</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model.Users)
+            {
+                @foreach (var user1 in user.Users)
+                {
+                    <tr>
+                        <td>
+                            @user1.Id.ToString()
+                        </td>
+                        <td>
+                            @user1.Email.ToString()
+                        </td>
+
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
